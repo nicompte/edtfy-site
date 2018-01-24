@@ -49,7 +49,7 @@ export class EdtfyComponent implements OnInit {
   ngOnInit() {
     // his.locale = this.route.snapshot.paramMap.get('locale');
     this.route.params.subscribe(params => {
-      this.locale = params['locale'];
+      this.locale = params['locale'] || 'en';
       this.dates = dates[this.locale];
     });
   }
