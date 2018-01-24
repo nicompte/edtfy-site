@@ -1,0 +1,146 @@
+<header class="header">
+  <div class="container brand">
+    <h1>edtfy&nbsp;&nbsp;&nbsp;&nbsp;
+      <i>javascript date parser</i>
+    </h1>
+    <app-locale-switcher [locale]="locale"></app-locale-switcher>
+  </div>
+  <div class="container" id="demo"></div>
+</header>
+
+<main>
+
+  <section class="container">
+    <div class="row">
+      <div class="two-thirds column">
+        <p>
+          edtfy is a javascript tool that attempts to parse a user input and transforms it into the
+          <a href="http://www.loc.gov/standards/datetime/pre-submission.html" target="_blank">Extended Date/Time Format</a> format.
+        </p>
+        <p>
+          The following forms of dates are currently supported:&nbsp;
+          <code>date</code>,
+          <code>interval</code>,
+          <code>uncertain/approximate</code>,&nbsp;
+          <code>season</code>,
+          <code>one of a set</code>,
+          <code>multiple dates</code>.
+        </p>
+      </div>
+      <div class="one-third column">
+        <p>
+          View code on
+          <a href="https://github.com/nicompte/edtfy">github&nbsp;
+            <i class="fa fa-github"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="container">
+    <h1>Usage</h1>
+    Install:
+    <pre><code class="bash">
+      npm install edtfy     # npm
+      bowser install edtfy  # bower
+    </code></pre> And use:
+    <pre><code class="javascript">
+      const edtfy = require('edtfy');
+      edtfy.locale('en');
+      edtfy('around march 1988'); // 1988-03~
+    </code></pre>
+  </section>
+
+  <section class="container">
+    <h1>Features</h1>
+
+    <h2>Date</h2>
+    <p>
+      A basic date can be either defined by
+      <code>a year</code>,
+      <code>a month and a year</code>, &nbsp;or
+      <code>a day, a month, and a year</code>.
+      <br/> Recognized formats for days:
+      <code>D</code>,
+      <code>DD</code>,
+      <code>Do</code>.
+      <br/> Recognized formats for months:
+      <code>M</code>,
+      <code>MM</code>,
+      <code>MMM</code>,
+      <code>MMMM</code>.
+      <br/> Recognized format for year:
+      <code>YYYY</code>.
+    </p>
+    <app-demo [inputs]="dates.date" [locale]="locale"></app-demo>
+
+    <h2>Interval</h2>
+    <p>
+      An interval is a period of time represented by a start date and an end date.
+      <br/> Start and end dates are dates can be either a
+      <code>date</code> or any date format described above,
+      <code>uncertain/approximate</code>,
+      <code>unspecified</code>,
+      <code>season</code>, or
+      <code>various</code>.
+    </p>
+    <app-demo [inputs]="dates.interval" [locale]="locale"></app-demo>
+
+    <h2>Uncertain and approximate</h2>
+    <p>
+      The parser will look for terms as
+      <code>around</code> or
+      <code>about</code> that indicates &nbsp;the dates is approximate, or a
+      <code>?</code> sign, for an uncertain date. A date can be &nbsp;both uncertain and approximate.
+    </p>
+    <app-demo [inputs]="dates.uncertainApproximate" [locale]="locale"></app-demo>
+
+    <h2>Unspecified</h2>
+    <p>
+      The characters
+      <code>u</code> and
+      <code>*</code> indicate that the value of the digit is unknown.
+    </p>
+    <app-demo [inputs]="dates.unspecified" [locale]="locale"></app-demo>
+
+    <h2>Season</h2>
+    <p>
+      The parser finds seasons, if they are used in combination with a year.
+    </p>
+    <app-demo [inputs]="dates.season" [locale]="locale"></app-demo>
+
+    <h2>One of a set</h2>
+    <p>
+      The parser finds sets of dates, when these ones are separated by the
+      <code>or</code> keyword. &nbsp;A set member can be as specified in
+      <code>date</code>,
+      <code>uncertain/approximate</code>,
+      <code>unspecified</code>, &nbsp;
+      <code>season</code>, or
+      <code>various</code>.
+    </p>
+    <app-demo [inputs]="dates.set" [locale]="locale"></app-demo>
+
+    <h2>Multiple dates</h2>
+    <p>
+      The same way as sets, the parser finds multiple dates, when these ones are separated by the
+      <code>and</code> keyword. &nbsp;These dates can be as specified in
+      <code>date</code>,
+      <code>uncertain/approximate</code>,
+      <code>unspecified</code>, &nbsp;
+      <code>season</code>, or
+      <code>various</code>.
+    </p>
+    <app-demo [inputs]="dates.multiple" [locale]="locale"></app-demo>
+
+    <h2>Various</h2>
+    <p>
+      The parser handles centuries, as well as 5digits long numbers.
+    </p>
+    <app-demo [inputs]="dates.various" [locale]="locale"></app-demo>
+
+  </section>
+
+</main>

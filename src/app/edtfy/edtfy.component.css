@@ -1,0 +1,89 @@
+header {
+	background: #e95d4f;
+	color: #fff;
+	margin-bottom: 3rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+	font-weight: 300;
+}
+
+header h1 {
+	margin-bottom: 1rem;
+	display: inline-block;
+}
+
+header i {
+	font-size: 0.5em;
+}
+
+header input {
+	color: #000;
+}
+
+header .brand {
+	padding: 0.5em 0 1em;
+}
+
+main {
+	position: relative;
+	top: 8em;
+}
+
+section {
+	font-weight: 300;
+	margin-bottom: 1em;
+}
+
+section h1 {
+	color: #e95d4f;
+	font-weight: 300;
+	font-family: Arial;
+	font-size: 2.5rem;
+}
+
+section h2 {
+	color: #333;
+	font-family: Arial;
+	font-size: 1.9rem;
+	margin-bottom: 0;
+	margin-left: 0.1em;
+}
+
+section p {
+	margin: 1rem 0;
+}
+
+section code {
+	font-size: 0.9em;
+	background: #f8f8f8;
+	font-family: inherit;
+}
+
+section code.hljs {
+	padding: 0;
+	line-height: 1;
+	overflow-y: hidden;
+}
+
+section .one-third {
+	border-left: solid 1px #fafafa;
+	padding-left: 1em;
+	height: 100%;
+}
+
+section .one-third i {
+	color: #e95d4f;
+	font-size: 1.5em;
+	vertical-align: middle;
+}
+
+section .one-third a {
+	text-decoration: none;
+	color: #e95d4f;
+}
+
+section .one-third a:hover {
+	text-decoration: underline;
+}

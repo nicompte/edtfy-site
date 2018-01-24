@@ -1,0 +1,6 @@
+<div class="row-holder">
+  <span>
+    <input [value]="_input" #model (keyup)="parse(model.value)" />
+  </span>
+  <span>{{ output }}</span>
+</div>

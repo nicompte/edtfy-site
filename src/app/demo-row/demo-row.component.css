@@ -1,0 +1,27 @@
+.row-holder {
+	display: contents;
+}
+
+span {
+	display: table-cell;
+	padding: 0.5em 0.9em;
+	width: 50%;
+}
+
+span input {
+	outline: 0;
+	padding: 0.1em;
+	border: solid 1px transparent;
+	border-bottom: solid 1px #fafafa;
+	border-radius: 0;
+	margin-bottom: 0;
+	width: 100%;
+}
+
+span input:hover {
+	border-bottom: solid 1px rgba(233,93,79,0.2);
+}
+
+span input:focus {
+	border-bottom: solid 1px rgba(233,93,79,0.5);
+}

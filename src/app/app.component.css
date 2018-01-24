@@ -1,0 +1,11 @@
+body{
+    font-family: Lato,sans-serif
+}
+
+footer {
+	border-top: solid 1px #eee;
+	padding: 1em 0;
+	position: relative;
+	top: 9em;
+	font-weight: 100;
+}
